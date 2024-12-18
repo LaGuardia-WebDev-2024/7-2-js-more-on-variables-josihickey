@@ -6,15 +6,21 @@ void setup() {
 //🎯Varaible Declarations Go Here
 var x = 200;
 var y = 100;
+var randRed=random(0,255);
+var randGreen=random(0,255);
+var randBlue=random(0,255);
 
 //🟢Draw Procedure - Runs on Repeat
 void draw(){
   background(255,255,255,200);
+  
 
   //💡⬇️⬇️⬇️💡 Your Code For This Unit Goes Here
   
   noStroke();
   fill(30, 204, 91); // a nice froggy green!
+  
+  ellipse(x,y+120,250,200);
 
   ellipse(x, y, 200, 100); // face
   ellipse(x - 50, y - 50, 40, 40); // left eye socket
@@ -24,8 +30,26 @@ void draw(){
   ellipse(x - 50, y - 50, 30, 30); // left eyeball
   ellipse(x + 50, y - 50, 30, 30); // right eyeball
   
+  //Pupils
+  fill(randRed,randGreen,randBlue);
+  ellipse(x-50, y-50, 12, 15);
+  ellipse(x+50, y-50, 12, 15);
+  
+  //light in pupils
+  fill(255,255,255);
+  ellipse(x-47,y-55,5,5);
+  ellipse(x+47,y-55,5,5);
+  
+  //Mouth
+  fill(255,141,161);
+  ellipse(x,y+20,110,40);
+  
+  //movingfrog
+  x = mouseX;
+y = mouseY;
 
 }
+
 
 
 
